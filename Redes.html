@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes de Computadoras - Innovación y Futuro</title>
+
+    <!-- Fuentes e Íconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #e9f0fa;
+            color: #333;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4b6cb7, #182848);
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.5s;
+        }
+
+        header:hover {
+            background: linear-gradient(135deg, #182848, #4b6cb7);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff3b2e;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 2rem 8%;
+            margin-top: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .intro {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            animation: fadeIn 2s;
+        }
+
+        .intro img {
+            width: 55%;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card {
+            width: 32%;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 90px;
+            margin-bottom: 15px;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .slide {
+            min-width: 320px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            scroll-snap-align: start;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .slide:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #182848;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #ff3b2e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+        .justificado {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body onload="playMusic()">
+
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <header>
+        <h1>Redes de Computadoras</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#tipos">Tipos de Redes</a></li>
+                <li><a href="#tecnologias">Tecnologías Futuras</a></li>
+                <li><a href="#aplicaciones">Aplicaciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="introduccion" class="animate-on-scroll">
+        <div class="intro">
+            <div>
+                <center><h2>¿Qué es una Red de Computadoras?</h2></center>
+                <p class="justificado">Una red de computadoras permite conectar múltiples dispositivos para compartir información y recursos. Esto incluye tanto redes pequeñas, como las domésticas, hasta grandes redes globales como Internet.</p>
+                <p class="justificado">Las redes pueden clasificarse según su tamaño y alcance, como las redes LAN (Local Area Network) y las redes WAN (Wide Area Network).</p>
+            </div>
+            <img src="red-de-computadoras-e1564230658533.jpg" alt="Red de computadoras">
+        </div>
+    </section>
+
+    <section id="tipos">
+        <center><h2>Tipos de Redes</h2></center>
+        <div class="cards">
+            <div class="card">
+                
+                <h3>Red LAN</h3>
+                <p class="justificado">Una red LAN (Local Area Network) conecta dispositivos dentro de un área geográfica limitada, como una oficina o un hogar, permitiendo la compartición de recursos y el acceso a Internet. Esta tecnología ofrece altas velocidades de transferencia de datos y baja latencia, lo que la hace ideal para entornos donde se requiere comunicación rápida. Sin embargo, su alcance está limitado, y la seguridad es un aspecto crítico a considerar para proteger la información en la red.</p>
+                <br>
+                <br>
+                <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="LAN">
+            </div>
+            <div class="card">
+                
+                <h3>Red WAN</h3>
+                <p class="justificado">Una red WAN (Wide Area Network) conecta múltiples redes locales (LAN) a través de distancias geográficas amplias, permitiendo la comunicación entre sedes de una empresa o usuarios en diferentes ubicaciones. Esta tecnología utiliza tecnologías de transmisión como líneas dedicadas, satélites o conexiones a Internet para facilitar la transferencia de datos. Aunque ofrece gran cobertura, la WAN puede presentar desafíos en términos de velocidad y latencia, así como consideraciones de seguridad para proteger la información que viaja entre ubicaciones.</p>
+                <br>
+                <br>
+                <img src="https://cdn-icons-png.flaticon.com/512/2913/2913466.png" alt="WAN">
+            </div>
+            <div class="card">
+                
+                <h3>Red Wi-Fi</h3>
+                <p class="justificado">Una red Wi-Fi permite la conexión inalámbrica de dispositivos a Internet o entre sí dentro de un área determinada, utilizando ondas de radio para transmitir datos. Esta tecnología es muy popular por su conveniencia y facilidad de uso en hogares, oficinas y espacios públicos, ofreciendo alta velocidad de conexión y movilidad. Sin embargo, la seguridad puede ser un desafío, ya que las redes Wi-Fi son susceptibles a ataques si no se configuran adecuadamente.</p>
+                <br>
+                <br>
+                <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Wi-Fi">
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologias">
+        <center><h2>Tecnologías Futuras</h2></center>
+        <div class="slider">
+            <div class="slide">
+                <h3>5G</h3>
+                <p class="justificado">La tecnología 5G ofrece velocidades de hasta 10 Gbps y latencias de menos de 1 milisegundo, permitiendo la conexión de un millón de dispositivos por kilómetro cuadrado. Facilita aplicaciones innovadoras como vehículos autónomos y realidad aumentada, aunque enfrenta desafíos en infraestructura y seguridad. Su implementación tiene el potencial de transformar la comunicación y la vida cotidiana.</p>
+            </div>
+            <div class="slide">
+                <h3>Internet de las Cosas (IoT)</h3>
+                <p class="justificado">El Internet de las Cosas (IoT) conecta dispositivos a Internet, permitiendo la recopilación y el intercambio de datos en tiempo real. Esta tecnología mejora la automatización y el monitoreo en diversos sectores, aunque enfrenta desafíos de seguridad y privacidad. Su potencial para transformar la vida cotidiana y los negocios es significativo.</p>
+            </div>
+            <div class="slide">
+                <h3>Inteligencia Artificial (IA)</h3>
+                <p class="justificado">La inteligencia artificial (IA) simula la capacidad humana de aprender, razonar y tomar decisiones mediante algoritmos y modelos de datos. Esta tecnología se aplica en diversas áreas, como la atención médica, el transporte y el análisis de datos, mejorando la eficiencia y la precisión. Sin embargo, plantea desafíos éticos y de seguridad, especialmente en cuanto a la privacidad y la responsabilidad en la toma de decisiones automatizada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="aplicaciones">
+        <center><h2>Aplicaciones de las Redes</h2></center>
+        <p>Las redes de computadoras son fundamentales para:</p>
+        <ul>
+            <li>Claro, aquí tienes un resumen con las seis aplicaciones más importantes de las redes de computadoras en informática:
+
+                <li>1.Comunicación: Facilitan la comunicación entre usuarios a través de correos electrónicos, mensajería instantánea y videoconferencias.</li>
+                
+                <li>2.Compartición de Recursos: Permiten compartir recursos como archivos, impresoras y bases de datos, mejorando la eficiencia.</li>
+                
+                <li>3.Acceso a Internet y Servicios en la Nube: Proporcionan acceso a Internet y a aplicaciones basadas en la nube, lo que ofrece flexibilidad y escalabilidad.</li>
+                
+                <li>4.Seguridad de Datos: Implementan medidas de seguridad como firewalls y VPNs para proteger la información y las comunicaciones.</li>
+                
+                <li>5.Teletrabajo y Educación a Distancia: Facilitan el teletrabajo y el aprendizaje en línea, permitiendo el acceso a recursos desde cualquier lugar.</li>
+                
+                <li>6.Internet de las Cosas (IoT): Conectan dispositivos inteligentes que recopilan y comparten datos, mejorando la automatización y el monitoreo en diversas industrias.
+                </li>
+       
+        </ul>
+    </section>
+
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <p>Escríbenos a: <a href="mailto:fern4ndo.mg@gmail.com">fern4ndo.mg@gmail.com</a></p>
+    </footer>
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="wait.wav" type="audio/mpeg"> <!-- Aquí pones el nombre de tu archivo -->
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <script>
+        function playMusic() {
+            const music = document.getElementById('backgroundMusic');
+            music.play();
+        }
+
+        // Iniciar la música al cargar la página
+        window.onload = function() {
+            playMusic();
+        };
+        // Animación al hacer scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.add('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
